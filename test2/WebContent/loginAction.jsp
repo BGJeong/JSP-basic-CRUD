@@ -27,9 +27,8 @@
 		}
 		UserDAO userDAO = new UserDAO();
 		int result = userDAO.login(user.getUserID(), user.getUserPassword()); 
-		 /* userDAO의 login() 
-		 login 페이지에서 ID, Password 입력된 값으로 넘어와서 login함수에 넣어서 실행
-		 -2(오류), -1(아이디가 없음), 0(로그인 실패), 1(로그인 성공)이 저장*/
+		 /*public int login(String userID, String userPassword) //로그인 처리하는 함수
+	          userDAO의 login() return -2(DB오류), -1(입력된 ID가 없음), 0(로그인 실패-비밀번호 오류), 1(로그인 성공)이 저장*/
 		 
 		 if(result == 1)
 		 {
