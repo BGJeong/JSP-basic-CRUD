@@ -52,7 +52,9 @@
 				<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 회원관리 </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="logoutAction.jsp">로그아웃</a>
+						<a class="dropdown-item" href = "myPage.jsp">마이페이지</a>
 					</div></li>
+					
 			</ul>
 			<%
 				}

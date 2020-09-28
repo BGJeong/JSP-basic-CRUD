@@ -89,7 +89,7 @@
 					</tr>
 					<tr>
 						<td>작성자 </td>
-						<td colspan ="2"><%=bbs.getBbsID() %></td>
+						<td colspan ="2"><%=bbs.getUserID() %></td>
 					</tr>
 					<tr>
 						<td>작성일자 </td>

@@ -33,7 +33,7 @@
 		 script.println("<script>");
 		 script.println("alert('이미 로그인 되었습니다.')");
 		 script.println("location.hrer('main.jsp'"); //이전 페이지로 돌려보냄(login 페이지)
-		 script.println("</script>");		
+		 script.println("</script>");	
 		}
 		if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() ==null || user.getUserName()==null || user.getUserEmail()==null)
 		{
@@ -51,11 +51,13 @@
 		
 		 if(result == -1)
 		 {
+			 
 			 PrintWriter script = response.getWriter();
 			 script.println("<script>");
 			 script.println("alert('이미 존재하는 아이디입니다.')");
 			 script.println("history.back()"); //이전 페이지로 돌려보냄(join 페이지)
 			 script.println("</script>"); 
+		 
 		 }
 		//DB를 생성할때 PRIMARY값으로 userID를 주었기 때문에, 동일한 아이뒤는 생성불가
 		 
