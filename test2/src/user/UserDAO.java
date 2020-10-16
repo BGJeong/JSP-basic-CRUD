@@ -24,7 +24,7 @@ public class UserDAO {
 		try {
 			String dbURL = "jdbc:mysql://localhost:3306/bbs?characterEncoding=UTF-8&serverTimezone=UTC";
 			String dbID = "root";
-			String dbPassword = "root";
+			String dbPassword = "1234";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch (Exception e) {
@@ -82,10 +82,10 @@ public class UserDAO {
 			if(rs.next()) {
 				User user = new User();
 				user.setUserID(rs.getString(1));
-				user.setUserName(rs.getString(3));
 				user.setUserPassword(rs.getString(2));
-				user.setUserEmail(rs.getString(5));
+				user.setUserName(rs.getString(3));
 				user.setUserGender(rs.getString(4));
+				user.setUserEmail(rs.getString(5));
 				list.add(user);
 			}
 		} catch (Exception e) {

@@ -110,23 +110,21 @@
 					for (int i = 0; i < ls.size(); i++) {
 					%>
 					<tr>
-						<td><%=ls.get(i).getUserName()%></td>
-						<td><%=ls.get(i).getUserEmail() %></td>
-						<td><%=ls.get(i).getUserId()%></td>
-						<td><%=ls.get(i).getUserGender()%></td>
-						<td><%=ls.get(i).getUserPassword()%></td>
+						<td><%=ls.get(0).getUserName()%></td>
+						<td><%=ls.get(0).getUserEmail()%></td>
+						<td><%=ls.get(0).getUserId()%></td>
+						<td><%=ls.get(0).getUserGender()%></td>
+						<td><%=ls.get(0).getUserPassword()%></td>
 					</tr>
 					<%
 						}
 					%>
-					<tr>
-						<th></th>
-					</tr>
+					
 				</tbody>
 			</table>
 		</div>
 	</div>
-			<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-			<script src="js/bootstrap.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
 </body>
 </html>
