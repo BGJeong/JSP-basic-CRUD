@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class UserDAO {
@@ -25,7 +26,7 @@ public class UserDAO {
 			String dbURL = "jdbc:mysql://localhost:3306/bbs?characterEncoding=UTF-8&serverTimezone=UTC";
 			String dbID = "root";
 			String dbPassword = "1234";
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -52,6 +53,19 @@ public class UserDAO {
 			return -1; // 아이디가 없음 userID=?부분 확인
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (rs != null)
+					rs.close();
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return -2; // 데이터베이스 오류
 	}
@@ -79,7 +93,7 @@ public class UserDAO {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userID);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				User user = new User();
 				user.setUserID(rs.getString(1));
 				user.setUserPassword(rs.getString(2));

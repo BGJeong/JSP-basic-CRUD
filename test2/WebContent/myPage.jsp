@@ -107,14 +107,14 @@
 						UserDAO userID2 = new UserDAO();
 					ArrayList<User> ls = new ArrayList<User>();
 					ls = userID2.myPage(userID);
-					for (int i = 0; i < ls.size(); i++) {
+					for(User i : ls) {
 					%>
 					<tr>
-						<td><%=ls.get(0).getUserName()%></td>
-						<td><%=ls.get(0).getUserEmail()%></td>
-						<td><%=ls.get(0).getUserId()%></td>
-						<td><%=ls.get(0).getUserGender()%></td>
-						<td><%=ls.get(0).getUserPassword()%></td>
+						<td><%=i.getUserName()%></td>
+						<td><%=i.getUserEmail()%></td>
+						<td><%=i.getUserId()%></td>
+						<td><%=i.getUserGender()%></td>
+						<td><%=i.getUserPassword()%></td>
 					</tr>
 					<%
 						}

@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ page import="user.UserDAO" %> 
 <%@ page import="java.io.PrintWriter" %>
-<% request.setCharacterEncoding("UTF-8"); %> <!-- 모든 데이터를 UTF-8로 받음 -->
-<jsp:useBean id="user" class="user.User" scope="page" /> <!-- scope => 현재의 페이지에서만 빈즈 사용 -->
+<% request.setCharacterEncoding("UTF-8"); %> 
+<jsp:useBean id="user" class="user.User" scope="page" /> 
 <jsp:setProperty name="user" property="userID" />
 <jsp:setProperty name="user" property="userPassword" />
 <!DOCTYPE html>
