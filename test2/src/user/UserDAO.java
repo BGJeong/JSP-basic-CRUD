@@ -98,40 +98,38 @@ public class UserDAO {
 		return -1;
 	}
 
-	public ArrayList<User> myPage(String userID) {
+	public User myPage(String userID) {
 		String SQL = "SELECT * FROM user WHERE userID = ? ";
-		ArrayList<User> list = new ArrayList<User>();
+		User user = new User();
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userID);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				User user = new User();
 				user.setUserID(rs.getString(1));
 				user.setUserPassword(rs.getString(2));
 				user.setUserName(rs.getString(3));
 				user.setUserGender(rs.getString(4));
 				user.setUserEmail(rs.getString(5));
-				list.add(user);
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			try {
-				if(pstmt != null) {
+				if (pstmt != null) {
 					pstmt.close();
 				}
-				if(rs != null) {
+				if (rs != null) {
 					rs.close();
 				}
-				if(conn != null) {
+				if (conn != null) {
 					conn.close();
 				}
-			}catch(Exception e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		return list;
+		return user;
 	}
 }

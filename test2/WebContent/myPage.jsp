@@ -91,36 +91,36 @@
 	</nav>
 	<div class="container mt-5">
 		<div class="row">
-			<table class="table table-striped"
-				style="text-align: center; border: 1px solid #dddddd">
+			<%
+				UserDAO userID2 = new UserDAO();
+			User user = new User();
+			user = userID2.myPage(userID);
+			%>
+			<table>
 				<thead>
 					<tr>
-						<th>이름</th>
-						<th>eMail</th>
 						<th>id</th>
-						<th>gender</th>
-						<th>pwd</th>
+						<td><input type="text" class="form-control" value="<%=user.getUserId()%>" readonly></td>
+						
 					</tr>
-				</thead>
-				<tbody>
-					<%
-						UserDAO userID2 = new UserDAO();
-					ArrayList<User> ls = new ArrayList<User>();
-					ls = userID2.myPage(userID);
-					for(User i : ls) {
-					%>
 					<tr>
-						<td><%=i.getUserName()%></td>
-						<td><%=i.getUserEmail()%></td>
-						<td><%=i.getUserId()%></td>
-						<td><%=i.getUserGender()%></td>
-						<td><%=i.getUserPassword()%></td>
+						<th>pwd</th>
+						<td><input type="text" class="form-control" value="<%=user.getUserPassword()%>" readonly></td>
 					</tr>
-					<%
-						}
-					%>
+					<tr>
+						<th>이름</th>
+						<td><input type="text" class="form-control" value="<%=user.getUserName()%>" readonly></td>
+					</tr>
+					<tr>
+						<th>gender</th>
+						<td><input type="text" class="form-control" value="<%=user.getUserGender()%>" readonly></td>
+					</tr>
+					<tr>
+						<th>eMail</th>
+						<td><input type="text" class="form-control" value="<%=user.getUserEmail()%>" readonly></td>
+					</tr>
 					
-				</tbody>
+				</thead>
 			</table>
 		</div>
 	</div>
